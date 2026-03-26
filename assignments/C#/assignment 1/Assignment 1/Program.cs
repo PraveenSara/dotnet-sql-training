@@ -14,7 +14,8 @@ namespace Assignment_1
             //EqualCheck.Is_equal();
             //Positive.Is_positive();
             //Calculator.Calc();
-            MultipicationTable.Tables();
+            //MultiplicationTable.Tables();
+            SumCalculator.Sum();
             Console.Read();
             
         }
