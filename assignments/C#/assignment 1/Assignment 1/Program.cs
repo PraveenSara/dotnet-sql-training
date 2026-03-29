@@ -11,10 +11,10 @@ namespace Assignment_1
         static void Main(string[] args)
         {
 
-            //EqualCheck.Is_equal();
-            //Positive.Is_positive();
-            //Calculator.Calc();
-            //MultiplicationTable.Tables();
+            EqualCheck.Is_equal();
+            Positive.Is_positive();
+            Calculator.Calc();
+            MultiplicationTable.Tables();
             SumCalculator.Sum();
             Console.Read();
             

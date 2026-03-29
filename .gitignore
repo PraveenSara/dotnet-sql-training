@@ -1,0 +1,13 @@
+# Ignore all build and temporary files in any subfolder
+**/bin/
+**/obj/
+**/.vs/
+
+# User-specific files
+*.user
+*.suo
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
