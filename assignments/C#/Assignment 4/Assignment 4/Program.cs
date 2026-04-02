@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment_4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //RemoveChar r = new RemoveChar();
+            //r.Remove();
+
+            //Exchange E = new Exchange();
+            //E.change();
+
+            DescendStack d = new DescendStack();
+            d.SortDescending();
+
+            Console.Read();
+        }
+
+    }
+}
