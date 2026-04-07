@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Books.cs" />
     <Compile Include="FileArray.cs" />
+    <Compile Include="FileLineCounter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
