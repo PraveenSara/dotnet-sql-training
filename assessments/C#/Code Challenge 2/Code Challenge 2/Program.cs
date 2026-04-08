@@ -29,32 +29,33 @@ namespace Code_Challenge_2
             Console.WriteLine();
 
             //2nd
-            //Product p = new Product();
-            //p.ProductList();
+
+            Product p = new Product();
+            p.ProductList();
 
             //3rd
 
-            //CheckNumber check = new CheckNumber();
-            //try
-            //{
-            //    check.AcceptNumber();
-            //}
-            //catch (NegativeException e)
-            //{
-            //    Console.WriteLine(e.Message);
-            //}
+            CheckNumber check = new CheckNumber();
+            try
+            {
+                check.AcceptNumber();
+            }
+            catch (NegativeException e)
+            {
+                Console.WriteLine(e.Message);
+            }
 
             //4th
 
-            //Calculator calc = new Calculator();
+            Calculator calc = new Calculator();
 
-            //Console.Write("Enter first number: ");
-            //int num1 = int.Parse(Console.ReadLine());
+            Console.Write("Enter first number: ");
+            int num1 = int.Parse(Console.ReadLine());
 
-            //Console.Write("Enter second number: ");
-            //int num2 = int.Parse(Console.ReadLine());
+            Console.Write("Enter second number: ");
+            int num2 = int.Parse(Console.ReadLine());
 
-            //calc.perform(num1, num2);
+            calc.perform(num1, num2);
 
             Console.Read();
         }
