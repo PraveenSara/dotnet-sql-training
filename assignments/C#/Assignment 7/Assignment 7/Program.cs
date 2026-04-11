@@ -15,10 +15,21 @@ namespace Assignment_7
             //SquareList sl = new SquareList();
             //sl.FindSquare();
 
-            //2.
+            //2.    
 
             //LetterFind lf = new LetterFind();
             //lf.FindLetter();
+
+            //3.
+
+            //Employee e = new Employee();
+            //e.DisplayEmployee();
+
+            //4. 
+
+            TicketProgram tp = new TicketProgram();
+            tp.TicketRate();
+
 
             Console.Read();
         }
