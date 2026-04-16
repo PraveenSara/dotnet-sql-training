@@ -10,20 +10,20 @@ namespace Assignment_7
     {
         static void Main(string[] args)
         {
-            //1. 
+            //1.
 
-            //SquareList sl = new SquareList();
-            //sl.FindSquare();
+            SquareList sl = new SquareList();
+            sl.FindSquare();
 
-            //2.    
+            //2.
 
-            //LetterFind lf = new LetterFind();
-            //lf.FindLetter();
+            LetterFind lf = new LetterFind();
+            lf.FindLetter();
 
             //3.
 
-            //Employee e = new Employee();
-            //e.DisplayEmployee();
+            Employee e = new Employee();
+            e.DisplayEmployee();
 
             //4. 
 
