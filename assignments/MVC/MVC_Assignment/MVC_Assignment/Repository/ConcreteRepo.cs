@@ -10,28 +10,29 @@ using System.Web;
 
 namespace MVC_Assignment.Repository
 {
-    public class ConcreteRepo<T> : IContactRepository<T> where T : class
+    public class ConcreteRepo : IContactRepository
     {
-        ContactContext db;
-        DbSet<T> dbset;
 
-        private ContactContext _context = new ContactContext();
+
+
+        private readonly ContactContext _context;
 
         public ConcreteRepo()
         {
-            db = new ContactContext();
-            dbset = db.Set<T>();
+            _context = new ContactContext();
         }
 
         public async Task<List<Contact>> GetAllAsync()
         {
             return await _context.Contacts.ToListAsync();
         }
+
         public async Task CreateAsync(Contact contact)
         {
-            await _context.Contacts.AddAsync(contact);
+            _context.Contacts.Add(contact);
             await _context.SaveChangesAsync();
         }
+
         public async Task DeleteAsync(long id)
         {
             var contact = await _context.Contacts.FindAsync(id);

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MVC_Assignment
 {
-    public interface IContactRepository<T> where T : class 
+    public interface IContactRepository
     {
         Task<List<Contact>> GetAllAsync();
         Task CreateAsync(Contact contact);

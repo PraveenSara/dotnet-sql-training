@@ -9,7 +9,7 @@ namespace MVC_Assignment.Models
 {
     public class ContactContext : DbContext
     {
-        public ContactContext() : base("name = connectstr") { }
+        public ContactContext() : base("ContactDbConnection") { }
         public DbSet<Contact> Contacts { get; set; }
     }
 }
