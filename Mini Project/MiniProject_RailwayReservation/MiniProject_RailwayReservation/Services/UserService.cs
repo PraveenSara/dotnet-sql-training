@@ -13,6 +13,7 @@ namespace MiniProject_RailwayReservation.Services
     {
         DbConnection db = new DbConnection();
         TrainService trainService = new TrainService();
+        BookingService bookingService = new BookingService();
 
         public void Register()
         {
@@ -73,7 +74,7 @@ namespace MiniProject_RailwayReservation.Services
                 string fullName = reader["FullName"].ToString();
                 string role = reader["Role"].ToString();
 
-                Console.WriteLine($"Welcome {role} {fullName}");
+                Console.WriteLine($"\n\nWelcome {fullName}");
 
                 if (role == "Admin")
                 {
@@ -93,55 +94,90 @@ namespace MiniProject_RailwayReservation.Services
 
         public void AdminMenu()
         {
-            Console.WriteLine("\n---------  WELCOME TO ADMIN PAGE  -------------");
-            Console.WriteLine("\n1. Add Train.\n2. View Train.\n3. Update Train.\n4. Delete Train.");
+            bool exit = false;
 
-            Console.WriteLine("Enter your choice : ");
-            int choice = Convert.ToInt32(Console.ReadLine());
-
-            switch (choice)
+            while (!exit)
             {
-                case 1:
-                    trainService.AddTrain();
-                    break;
-                case 2:
-                    trainService.ViewTrain();
-                    break;
-                case 3:
-                    trainService.UpdateTrain();
-                    break;
-                case 4:
-                    trainService.DeleteTrain();
-                    break;
-                default:
-                    Console.WriteLine("Invalid choice enter (1/2/3/4) only.");
-                    break;
+                Console.WriteLine("\n---------  WELCOME TO ADMIN PAGE  -------------");
+                Console.WriteLine("\n1. Add Train.\n2. View Train.\n3. Update Train.\n4. Delete Train.\n5. Exit");
+
+                Console.WriteLine("Enter your choice : ");
+                int choice = Convert.ToInt32(Console.ReadLine());
+
+                switch (choice)
+                {
+                    case 1:
+                        trainService.AddTrain();
+                        break;
+
+                    case 2:
+                        trainService.ViewTrain();
+                        break;
+
+                    case 3:
+                        trainService.UpdateTrain();
+                        break;
+
+                    case 4:
+                        trainService.DeleteTrain();
+                        break;
+
+                    case 5:
+                        exit = true;
+                        Console.WriteLine("\nExiting Admin menu..");
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid choice enter (1/2/3/4/5) only.");
+                        break;
+                }
             }
+            
         }
 
         public void UserMenu(int userId)
         {
-            Console.WriteLine("\n---------  WELCOME TO USER MENU PAGE  -------------");
-            Console.WriteLine("\n1. Search Train.\n2. Book Ticket.\n3. View Ticket.\n4. Cancel Ticket.");
-
-            Console.WriteLine("Enter your choice : ");
-            int choice = Convert.ToInt32(Console.ReadLine());
-
-            switch (choice)
+            bool exit = false;
+            while (!exit)
             {
-                // TODO : Create functions for UserMenu
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    break;
-                default:
-                    Console.WriteLine("Invalid choice enter (1/2/3/4) only.");
-                    break;
+                Console.WriteLine("\n---------  WELCOME TO USER MENU PAGE  -------------");
+                Console.WriteLine("\n1. Search Train.\n2. Book Ticket.\n3. View Ticket.\n4. Cancel Ticket.\n5.View Cancelled Ticket Details\n6. Exit.");
+
+                Console.Write("Enter your choice : ");
+                int choice = Convert.ToInt32(Console.ReadLine());
+
+                switch (choice)
+                {
+                    case 1:
+                        trainService.SearchTrain();
+                        break;
+
+                    case 2:
+                        bookingService.BookTicket(userId);
+                        break;
+
+                    case 3:
+                        bookingService.ViewTicket(userId);
+                        break;
+
+                    case 4:
+                        bookingService.CancelTicket(userId);
+                        break;
+
+                    case 5:
+                        bookingService.ViewCancellationDetails(userId);
+                        break;
+                    case 6:
+                        exit = true;
+                        Console.WriteLine("\nExiting User Menu....");
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid choice enter (1/2/3/4/5/6) only.");
+                        break;
+                }
             }
+            
         }
     }
 }
