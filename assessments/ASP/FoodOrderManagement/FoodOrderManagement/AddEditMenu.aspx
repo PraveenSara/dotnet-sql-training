@@ -153,6 +153,9 @@
             </table>
 
         </div>
+        <p>
+            <asp:Button ID="btnBack" runat="server" CausesValidation="False" CssClass="btn" OnClick="btnBack_Click" Text="Back" />
+        </p>
     </form>
 </body>
 </html>

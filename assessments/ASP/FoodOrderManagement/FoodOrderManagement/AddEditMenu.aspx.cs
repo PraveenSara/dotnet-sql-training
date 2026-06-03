@@ -186,6 +186,9 @@ namespace FoodOrderManagement
             chkIsAvailable.Checked = false;
         }
 
-        
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MenuList.aspx");
+        }
     }
 }

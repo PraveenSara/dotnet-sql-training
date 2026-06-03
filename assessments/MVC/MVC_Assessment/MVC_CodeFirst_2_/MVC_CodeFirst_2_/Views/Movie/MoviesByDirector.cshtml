@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "MoviesByDirector";
+}
+
+<h2>Seach Movies By Director</h2>
+
+@using (Html.BeginForm())
+{
+    <input type="text"
+           name="directorName" />
+
+    <input type="submit"
+           value="Search" />
+}

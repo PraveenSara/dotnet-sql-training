@@ -1,0 +1,24 @@
+﻿@model MVC_CodeFirst_2_.Models.Movie
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Movie Detais</h2>
+
+@using (Html.BeginForm())
+{
+    <p>Movie Name</p>
+    @Html.TextBoxFor(m => m.MovieName)
+
+    <p>Director Name</p>
+    @Html.TextBoxFor(m => m.DirectorName)
+
+    <p>Date Of Release</p>
+    @Html.TextBoxFor(m => m.DateOfRelease, "{0:yyyy-MM-dd}",
+        new { type = "date" })
+
+    <br />
+    <br />
+
+    <input type="submit" value="Save" />
+}

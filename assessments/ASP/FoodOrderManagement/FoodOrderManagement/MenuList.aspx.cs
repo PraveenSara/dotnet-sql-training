@@ -86,6 +86,9 @@ namespace FoodOrderManagement
             con.Close();
         }
 
-
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AddEditMenu.aspx");
+        }
     }
 }

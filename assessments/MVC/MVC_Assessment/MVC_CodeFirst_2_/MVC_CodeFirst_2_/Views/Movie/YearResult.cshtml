@@ -1,0 +1,19 @@
+﻿@model IEnumerable<MVC_CodeFirst_2_.Models.Movie>
+@{
+    ViewBag.Title = "YearResult";
+}
+
+<h2>Result for entered Year</h2>
+
+<table border="1">
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MovieName</td>
+            <td>@item.DirectorName</td>
+            <td>@item.DateOfRelease.Year</td>
+        </tr>
+    }
+
+</table>
